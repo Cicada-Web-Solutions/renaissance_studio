@@ -442,6 +442,7 @@ body.dark-active .blueprint-grid-overlay .grid-line {
     color: var(--color-accent);
     margin-bottom: var(--space-md);
     display: inline-block;
+    line-height: 1.5;
 }
 
 .hero-title {
@@ -467,6 +468,64 @@ body.dark-active .blueprint-grid-overlay .grid-line {
     display: flex;
     justify-content: center;
     gap: var(--space-md);
+}
+
+.hero-socials {
+    position: absolute;
+    right: 48px;
+    bottom: 42px;
+    display: flex;
+    gap: 18px;
+    z-index: 20;
+}
+
+.hero-social-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #F8F6F1;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    transition: all 0.35s ease;
+}
+
+.hero-social-btn.instagram:hover {
+    background: #E1306C;
+    color: #ffffff;
+    box-shadow: 0 12px 35px rgba(225, 48, 108, 0.35);
+}
+
+.hero-social-btn.youtube:hover {
+    background: #FF0000;
+    color: #ffffff;
+    box-shadow: 0 12px 35px rgba(255, 0, 0, 0.32);
+}
+
+.hero-social-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero-socials {
+        right: 20px;
+        bottom: 24px;
+        gap: 14px;
+    }
+
+    .hero-social-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1rem;
+    }
 }
 
 /* Premium Button Architecture styling */
