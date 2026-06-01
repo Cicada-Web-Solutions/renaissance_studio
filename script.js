@@ -23,13 +23,29 @@ document.addEventListener("DOMContentLoaded", () => {
 /**
  * Custom Minimal Cursor - Follows mouse with sleek easing and expands on hover
  */
+/**
+ * Custom Minimal Cursor - Desktop only
+ */
 function initCustomCursor() {
+  // Disable custom cursor on mobile/tablet
+  if (window.innerWidth <= 768 || "ontouchstart" in window) {
+    const cursor = document.getElementById("customCursor");
+    const dot = document.getElementById("customCursorDot");
+
+    if (cursor) cursor.style.display = "none";
+    if (dot) dot.style.display = "none";
+
+    return;
+  }
+
   const cursor = document.getElementById("customCursor");
   const dot = document.getElementById("customCursorDot");
 
   if (!cursor || !dot) return;
 
-  // Move cursor with mouse
+  cursor.style.display = "block";
+  dot.style.display = "block";
+
   window.addEventListener("mousemove", (e) => {
     gsap.to(cursor, {
       x: e.clientX,
@@ -46,16 +62,15 @@ function initCustomCursor() {
     });
   });
 
-  // Expand cursor on hoverable elements
   const interactiveElements = document.querySelectorAll(
-    "a, button, .project-card, .service-card, .form-input, .btn",
+    "a, button, .project-card, .service-card, .form-input, .btn"
   );
 
   interactiveElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
       cursor.style.width = "40px";
       cursor.style.height = "40px";
-      cursor.style.borderColor = "#B08D57"; // Accent Gold color
+      cursor.style.borderColor = "#B08D57";
       cursor.style.backgroundColor = "rgba(176, 141, 87, 0.05)";
     });
 
