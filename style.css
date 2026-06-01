@@ -1476,9 +1476,21 @@ textarea.form-input {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
     }
+    .site-footer {
+        padding: var(--space-xxl) var(--space-lg) var(--space-lg);
+    }
+
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.4fr 1fr 1fr;
         gap: var(--space-lg);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand .studio-tagline {
+        max-width: 520px;
     }
 }
 
@@ -1503,5 +1515,123 @@ textarea.form-input {
     }
     .form-group.full-width, .form-btn-wrap {
         grid-column: span 1;
+    }
+
+    .service-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: 80%;
+        
+    }
+
+    .service-title {
+        font-size: 1.7rem;
+    }
+
+    .contact-huge-cta {
+        font-size: clamp(1.9rem, 5vw, 3.5rem);
+    }
+     .site-footer {
+        padding: 70px 32px 28px;
+        overflow: hidden;
+    }
+
+    .footer-top-accent {
+        left: 0;
+        transform: none;
+        max-width: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 42px 34px;
+        margin-bottom: 52px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand .studio-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: 0.08em;
+        word-break: break-word;
+    }
+
+    .footer-brand .studio-tagline {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        max-width: 100%;
+    }
+
+    .footer-col-title {
+        font-size: 0.72rem;
+        margin-bottom: 18px;
+    }
+
+    .footer-links {
+        gap: 14px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-link a {
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.72rem;
+        line-height: 1.6;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .service-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        width: 90vw;
+        
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .site-footer {
+        padding: 64px 26px 26px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-brand .studio-title {
+        font-size: 2.05rem;
+        letter-spacing: 0.07em;
+    }
+
+    .footer-brand .studio-tagline {
+        font-size: 0.86rem;
+        max-width: 310px;
+    }
+
+    .footer-col-title {
+        margin-bottom: 16px;
+    }
+
+    .footer-bottom {
+        font-size: 0.68rem;
+        padding-top: 24px;
     }
 }
