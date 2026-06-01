@@ -446,7 +446,7 @@ body.dark-active .blueprint-grid-overlay .grid-line {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
     text-transform: uppercase;
     letter-spacing: 0.18em;
     margin-bottom: var(--space-md);
@@ -525,6 +525,30 @@ body.dark-active .blueprint-grid-overlay .grid-line {
         width: 52px;
         height: 52px;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-accent {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+    }
+
+    .hero-buttons a {
+        font-size: 0.7rem;
+    }
+
+    .hero-socials {
+        right: 16px;
+        bottom: 16px;
+        gap: 10px;
+    }
+
+    .hero-social-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 0.9rem;
     }
 }
 
