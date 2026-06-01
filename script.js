@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initFounderAnimations();
   initPortfolioParallax();
   initServicesStagger();
+  initProcessArrows();
   initProcessTimeline();
   initQuoteParallax();
   initContactScroll();
+  initBackToTop();
 });
 
 /**
@@ -63,7 +65,7 @@ function initCustomCursor() {
   });
 
   const interactiveElements = document.querySelectorAll(
-    "a, button, .project-card, .service-card, .form-input, .btn"
+    "a, button, .project-card, .project-more-card, .service-card, .form-input, .btn"
   );
 
   interactiveElements.forEach((el) => {
@@ -480,6 +482,49 @@ function initServicesStagger() {
 /**
  * Design Process Timeline - Horizontal scroll snapping and timeline highlights
  */
+
+function initProcessArrows() {
+  const track = document.getElementById("processTrack");
+  const prevBtn = document.getElementById("processPrev");
+  const nextBtn = document.getElementById("processNext");
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function getScrollAmount() {
+    const step = track.querySelector(".process-step");
+    if (!step) return 360;
+
+    const gap = parseFloat(getComputedStyle(track).gap) || 32;
+    return step.offsetWidth + gap;
+  }
+
+  function updateArrowState() {
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+    prevBtn.disabled = track.scrollLeft <= 5;
+    nextBtn.disabled = track.scrollLeft >= maxScrollLeft - 5;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    track.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    track.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+  track.addEventListener("scroll", updateArrowState);
+  window.addEventListener("resize", updateArrowState);
+
+  updateArrowState();
+}
+
 function initProcessTimeline() {
   const steps = document.querySelectorAll(".process-step");
 
@@ -608,4 +653,27 @@ function initContactScroll() {
       ease: "power3.out",
     },
   );
+}
+
+
+
+function initBackToTop() {
+  const backToTop = document.getElementById("backToTop");
+
+  if (!backToTop) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
