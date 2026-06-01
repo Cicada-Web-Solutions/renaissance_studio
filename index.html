@@ -119,6 +119,14 @@
         }
       }
     </script>
+
+    <!-- Preloading Hero Image -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/bg2_upscaled.webp"
+      fetchpriority="high"
+    />
   </head>
 
   <body>
@@ -174,7 +182,9 @@
           <!-- Using a highly premium architectural masterpiece from Unsplash optimized for hero visuals -->
           <img
             src="assets/bg2_upscaled.webp"
-            alt="Renaissance Hero Architecture Project"
+            alt="Modern residential architecture project by Renaissance Studio"
+            fetchpriority="high"
+            decoding="async"
             class="hero-bg-img"
             id="heroBgImg"
           />
@@ -321,6 +331,8 @@
                 src="assets/project_1.webp"
                 alt="Residence for Mr. Basker M.A."
                 class="project-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="project-overlay">
                 <div class="project-socials">
@@ -361,6 +373,8 @@
                 src="assets/project_2.webp"
                 alt="Project Prathma"
                 class="project-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="project-overlay">
                 <div class="project-socials">
@@ -401,6 +415,8 @@
                 src="assets/project_3.webp"
                 alt="Residance for Mr. Elamvazhudhi"
                 class="project-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="project-overlay">
                 <div class="project-socials">
@@ -441,6 +457,8 @@
                 src="assets/project_4.webp"
                 alt="Interiors for Capital Homes"
                 class="project-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="project-overlay">
                 <div class="project-socials">
@@ -481,6 +499,8 @@
                 src="assets/project_5.webp"
                 alt="Villa interiors for Mr Umapathy"
                 class="project-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="project-overlay">
                 <div class="project-socials">
@@ -766,6 +786,8 @@
             alt="Architectural Texture Background"
             class="dramatic-quote-bg"
             id="quoteBg"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="dramatic-quote-container">
