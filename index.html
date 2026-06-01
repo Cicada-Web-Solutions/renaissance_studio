@@ -778,21 +778,12 @@
           </div>
 
           <div class="contact-form-wrap" id="contactFormContainer">
-            <form
-              class="contact-form"
-              action="#"
-              method="POST"
-              onsubmit="
-                event.preventDefault();
-                alert(
-                  'Thank you for reaching out to Renaissance Studio. Our principal architect Ar. D Vinod Kumar will connect with you soon.',
-                );
-              "
-            >
+            <form class="contact-form" action="contact.php" method="POST">
               <div class="form-group">
                 <label for="clientName" class="form-label">Full Name</label>
                 <input
                   type="text"
+                  name="name"
                   id="clientName"
                   class="form-input"
                   placeholder="e.g. Athena Pallas"
@@ -800,14 +791,13 @@
                 />
               </div>
               <div class="form-group">
-                <label for="clientEmail" class="form-label"
-                  >Email Address</label
-                >
+                <label for="clientPhone" class="form-label">Phone Number</label>
                 <input
-                  type="email"
-                  id="clientEmail"
+                  type="tel"
+                  name="phone_number"
+                  id="clientPhone"
                   class="form-input"
-                  placeholder="e.g. contact@domain.com"
+                  placeholder="e.g. +91 98410 51816"
                   required
                 />
               </div>
@@ -815,6 +805,7 @@
                 <label for="projectType" class="form-label">Project Type</label>
                 <input
                   type="text"
+                  name="project_type"
                   id="projectType"
                   class="form-input"
                   placeholder="e.g. Private Villa, Modern Corporate Headquarters"
@@ -826,6 +817,7 @@
                   >Project Details & Ambition</label
                 >
                 <textarea
+                  name="project_details"
                   id="clientMessage"
                   class="form-input"
                   placeholder="Describe the landscape coordinates, design aesthetics desired, and structural requirements..."
@@ -882,17 +874,26 @@
           <h4 class="footer-col-title">Connect</h4>
           <ul class="footer-links">
             <li class="footer-link">
-              <a href="https://www.instagram.com/renaissancestudio35/" target="_blank" rel="noopener"
+              <a
+                href="https://www.instagram.com/renaissancestudio35/"
+                target="_blank"
+                rel="noopener"
                 >Instagram</a
               >
             </li>
             <li class="footer-link">
-              <a href="https://youtube.com/@architectdvinodkumar?si=i8nXHhclzeoIK33R" target="_blank" rel="noopener"
+              <a
+                href="https://youtube.com/@architectdvinodkumar?si=i8nXHhclzeoIK33R"
+                target="_blank"
+                rel="noopener"
                 >Youtube</a
               >
             </li>
             <li class="footer-link">
-              <a href="https://wa.me/+919841051816" target="_blank" rel="noopener"
+              <a
+                href="https://wa.me/+919841051816"
+                target="_blank"
+                rel="noopener"
                 >Whatsapp</a
               >
             </li>
